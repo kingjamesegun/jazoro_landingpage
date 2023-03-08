@@ -38,18 +38,21 @@
 	</head>
 	<body>
 		<header
-			class="bg-[url('./assets/ingHero.jpg')] bg-cover h-[237vh] md:h-[100vh] lg:h-[120vh]"
+			class="bg-[url('./assets/ingHero.jpg')] md:bg-contain bg-cover bg-repeat md:bg-no-repeat h-[200vh] md:h-[100vh] lg:h-[108vh]"
 		>
 			<!-- NAVIGATION -->
 			<nav
-				class="flex items-center justify-between flex-wrap bg-transparent py-6 px-5 md:px-10 lg:px-28 border-bottom border-gray-200"
+				class="flex items-center justify-between flex-wrap bg-transparent py-6 px-5 md:px-10 lg:px-28 border-bottom-2 border-gray-700"
 			>
 				<div class="flex items-center flex-shrink-0 text-white mr-6">
-					<span class="font-semibold text-3xl tracking-tight">LOGO</span>
+					<span class="font-semibold text-3xl tracking-tight">
+						<img src="./assets/logo.png" alt="logo" class="w-[85.5px] h-[69]" />
+					</span>
 				</div>
 				<div class="block md:hidden">
 					<button
 						class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+						onclick="navBtn()"
 					>
 						<svg
 							class="fill-current h-3 w-3"
@@ -61,7 +64,63 @@
 						</svg>
 					</button>
 				</div>
-				<div class="w-full block flex-grow md:flex md:items-center md:w-auto">
+				<div class="w-full hidden flex-grow md:flex md:items-center md:w-auto">
+					<div class="text-md md:flex-grow gap-3">
+						<a
+							href="#responsive-header"
+							class="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray hover:text-white mr-4"
+						>
+							Introduction
+						</a>
+						<a
+							href="#responsive-header"
+							class="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray mr-4"
+						>
+							Insight
+						</a>
+						<a
+							href="#responsive-header"
+							class="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray mr-4"
+						>
+							Initiatives
+						</a>
+						<a
+							href="#responsive-header"
+							class="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray mr-4"
+						>
+							Inelligentsia
+						</a>
+						<a
+							href="#responsive-header"
+							class="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray mr-4"
+						>
+							Inquiries
+						</a>
+
+						<a
+							href="#responsive-header"
+							class="block mt-4 md:inline-block md:mt-0 text-white hover:text-gray mr-4"
+						>
+							Invest
+						</a>
+					</div>
+					<div class="flex gap-3">
+						<a
+							href="#"
+							class="inline-block text-sm px-8 py-3 bg-green leading-none font-bold text-white hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+							>ADMISSIONS</a
+						>
+						<a
+							href="#"
+							class="inline-block text-sm px-8 py-3 leading-none border font-bold uppercase bg-white text-green border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+							>Contact</a
+						>
+					</div>
+				</div>
+
+				<div
+					class="w-full hidden block flex-grow md:flex md:items-center md:w-auto md:hidden nav__links"
+				>
 					<div class="text-md md:flex-grow gap-3">
 						<a
 							href="#responsive-header"
@@ -117,7 +176,7 @@
 			</nav>
 
 			<div
-				class="grid grid-cols-1 md:grid-cols-2 px-2 md:px-10 lg:py-10 md:gap-5 lg:px-28"
+				class="grid grid-cols-1 md:grid-cols-2 px-2 md:px-10 lg:py-2 md:gap-5 lg:gap-10 lg:px-28"
 			>
 				<div class="py-5 lg:py-20 text-white">
 					<h1 class="text-5xl lg:text-7xl font-bold mb-3">Invitation</h1>
@@ -166,8 +225,16 @@
 							<!-- <p class="mt-2 text-sm">You'll earn 5,000 tokens</p> -->
 						</div>
 						<div class="grid grid-cols-2 gap-5 mt-5">
-							<div class="bg-yellow font-bold text-center py-3">Another</div>
-							<div class="bg-gray-300 font-bold text-center py-3">Stripe</div>
+							<div
+								class="bg-yellow font-bold flex justify-center items-center py-3"
+							>
+								<img src="./assets/paypal.png" alt="paypal" />
+							</div>
+							<div
+								class="bg-gray-300 font-bold flex justify-center items-center text-center py-3"
+							>
+								<img src="./assets/icon/stripe.svg" alt="stripe" />
+							</div>
 						</div>
 						<div class="flex gap-2 items-center mt-5">
 							<input type="checkbox" name="" id="" class="rounded-sm" />
@@ -194,16 +261,14 @@
 					<h1 class="text-white text-5xl md:text-7xl">120</h1>
 					<p class="text-white text-lg opacity-50">Full time students</p>
 				</div>
-				<div
-					class="h-[2px] md:h-100 w-100 md:w-[2px] bg-white opacity-50"
-				></div>
+				<div class="hidden lg:block h-100 w-[2px] bg-white opacity-50"></div>
+				<div class="h-[2px] w-100 lg:hidden bg-white opacity-50"></div>
 				<div class="text-center">
 					<h1 class="text-white text-5xl md:text-7xl">25</h1>
 					<p class="text-white text-lg opacity-50">Community partnerships</p>
 				</div>
-				<div
-					class="h-[2px] md:h-100 w-100 md:w-[2px] bg-white opacity-50"
-				></div>
+				<div class="hidden lg:block h-100 w-[2px] bg-white opacity-50"></div>
+				<div class="h-[2px] w-100 lg:hidden bg-white opacity-50"></div>
 
 				<div class="text-center">
 					<h1 class="text-white text-5xl md:text-7xl">1800+</h1>
@@ -220,7 +285,7 @@
 		>
 			<div class="grid grid-cols-1 lg:grid-cols-2 py-5">
 				<div>
-					<h1 class="text-7xl font-bold">Contact Us</h1>
+					<h1 class="text-5xl md:text-7xl font-bold">Contact Us</h1>
 					<div class="mt-10">
 						<h3 class="font-bold text-2xl">Home Office</h3>
 						<div class="flex gap-3 w-3/4 my-5">
@@ -394,5 +459,18 @@
 		</footer>
 
 		<script src="/script.js"></script>
+		<script>
+			function navBtn() {
+				console.log("worked");
+				var elms = document.getElementsByClassName("nav__links");
+				Array.from(elms).forEach((x) => {
+					if (x.style.display === "none") {
+						x.style.display = "block";
+					} else {
+						x.style.display = "none";
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
