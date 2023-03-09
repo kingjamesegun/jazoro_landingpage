@@ -38,7 +38,7 @@
 	</head>
 	<body>
 		<header
-			class="bg-[url('./assets/ingHero.jpg')] md:bg-contain bg-cover bg-repeat md:bg-no-repeat h-[200vh] md:h-[100vh] lg:h-[108vh]"
+			class="bg-[url('./assets/ingHero.jpg')] bg-cover bg-repeat md:bg-no-repeat h-[130vh] md:h-[100vh] lg:h-[100vh]"
 		>
 			<!-- NAVIGATION -->
 			<nav
@@ -203,7 +203,6 @@
 									placeholder="$50"
 									class="border-0 py-4 pl-6 w-full"
 									id="amount"
-									value="32"
 								/>
 							</div>
 							<p class="mt-2 text-sm">
@@ -254,7 +253,7 @@
 			</div>
 
 			<!-- REVIEWS -->
-			<div
+			<!-- <div
 				class="flex flex-col md:flex-row justify-around mt-20 lg:mt-30 pt-20 md:pt-0 px-5 md:px-40 gap-10 md:gap-0"
 			>
 				<div class="text-center">
@@ -276,7 +275,7 @@
 						Over 1800 students engagements
 					</p>
 				</div>
-			</div>
+			</div> -->
 		</header>
 
 		<!-- CONTACT -->
@@ -471,6 +470,15 @@
 					}
 				});
 			}
+			const token = document.getElementById("token");
+			const amountInput = document.getElementById("amount");
+
+			amountInput.addEventListener("input", (e) => {
+				const value = amountInput.value;
+				const inputNumber = Number(value);
+				const newToken = inputNumber * 24;
+				token.innerText = newToken;
+			});
 		</script>
 	</body>
 </html>
