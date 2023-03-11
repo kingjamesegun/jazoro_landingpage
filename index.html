@@ -198,15 +198,18 @@
 								<label for="" class="absolute top-[-10px] left-3 bg-white px-3"
 									>Enter Investment Amount</label
 								>
-								<input
-									type="text"
-									placeholder="$50"
-									class="border-0 py-4 pl-6 w-full"
-									id="amount"
-								/>
+								<div class="flex pl-5 items-center">
+									<p class="text-gray-500 mr-[-20px]">$</p>
+									<input
+										type="text"
+										placeholder="0"
+										class="border-0 pl-5 bg-none bg-transparent py-4 w-full focus:outline-0"
+										id="amount"
+									/>
+								</div>
 							</div>
 							<p class="mt-2 text-sm">
-								You'll earn <span id="token"> </span> tokens
+								You'll earn <span id="token">0 </span> tokens
 							</p>
 						</div>
 						<div class="mt-5 text-deepgray">
@@ -217,8 +220,6 @@
 								<select class="border-0 py-4 pl-5 w-full">
 									<option value="Montly">One-time</option>
 									<option value="Montly">Montly</option>
-									<option value="Montly">Yearly</option>
-									<option value="Montly">Bi annually</option>
 								</select>
 							</div>
 							<!-- <p class="mt-2 text-sm">You'll earn 5,000 tokens</p> -->
@@ -472,12 +473,21 @@
 			}
 			const token = document.getElementById("token");
 			const amountInput = document.getElementById("amount");
+			amountInput.addEventListener("keyup", (event) => {
+				var tempNumber = amountInput.value.replace(/,/gi, "");
+				var commaSeparatedNumber = tempNumber
+					.split(/(?=(?:\d{3})+$)/)
+					.join(",");
+				amountInput.value = commaSeparatedNumber;
+			});
 
 			amountInput.addEventListener("input", (e) => {
-				const value = amountInput.value;
+				const value = amountInput.value.replace(/\,/g, "");
 				const inputNumber = Number(value);
-				const newToken = inputNumber * 24;
-				token.innerText = newToken;
+				const newToken = inputNumber * 100;
+				token.innerText = newToken
+					.toString()
+					.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			});
 		</script>
 	</body>
